@@ -190,15 +190,98 @@ if( age <= 12){
 } else {
     console.log(firstName + ' is a Man.');
 }
-
 */
 
 
 //----The Ternary Operator and Switch Statement-----
 
+/*
+// TERNARY OPERATOR:
 // SYNTAX: <condition part> ? <TRUE Part> : <Else Part>
 
 var venkatAge = 20;
 var ShubhamAge = 21;
+var age = 13;
 
 venkatAge < ShubhamAge ? console.log('Shubham\'s Age is greater than that of Venkat') : console.log('Venkat\'s age is greater than that of Shubham\'s');
+
+var drink = age >= 18 ? 'beer' : 'juice';
+console.log(drink);
+
+
+//SWITCH STATEMENTS:
+
+
+var firstName = 'Venkat';
+var job = 'teacher';
+
+switch('driver'){
+    case 'teacher':
+        console.log(firstName + ' teaches kids');
+        break;
+    case 'driver':
+        console.log(firstName + ' drives Uber in Poland');
+        break;
+    case 'cop':
+        console.log(firstName + ' is a Cop!');
+        break;
+    default :
+        console.log(firstName + ' does something else');
+}
+
+var firstName = 'Venkat';
+var age = 20;
+
+switch(true){
+    case age <= 12:
+        console.log(irstName + ' is a boy.');
+        break;
+    case age > 12 && age <= 19:
+         console.log(firstName + ' is a teenager.');
+        break;
+    case age > 19 && age <= 30:
+         console.log(firstName + ' is an Young man.');
+        break;
+    default :
+         console.log(firstName + ' is a Man.');
+}
+*/
+
+//--Truthy and Falsy Values and Equality Operators--
+
+/*
+//TRUTHY AND FALSY VALUES:
+
+
+//Falsy Value : undefined, null, 0, '' (an empty string), and NaN (Not a Number) are the values which are automatically evaluated as a false one in a if/else conditions.
+//Truthy Value: All the ones except the Falsy Values.
+
+var height
+
+height = 0;
+
+if(height || height === 0){
+    console.log('Variable is defined');
+} else {
+    console.log('Varibale is not defined');
+}
+
+
+//Difference Between '==' and '===' [EQUALITY OPERATORS]:
+
+// '===' is strict equality operator and gets true only if every value in both sides have equal value as well as equal type.
+
+//'==' is a equalty operator which gets true if the values are equal, unaffected by a string or a number, it does type coersion.for example: 23 (number) and '23' (string) both value will work in the == equality operator.
+
+height = '23';
+if(height == 23){
+    console.log("== does the type coersion.");
+}
+
+if(height === 23){
+    console.log("=== does the type coersion.");
+} else {
+    console.log("=== do not do the type coersion.");
+}
+*/
+
