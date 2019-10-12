@@ -192,7 +192,6 @@ if( age <= 12){
 }
 */
 
-
 //----The Ternary Operator and Switch Statement-----
 
 /*
@@ -247,7 +246,7 @@ switch(true){
 }
 */
 
-//--Truthy and Falsy Values and Equality Operators--
+//---Truthy / Falsy Values and Equality Operators---
 
 /*
 //TRUTHY AND FALSY VALUES:
@@ -283,5 +282,113 @@ if(height === 23){
 } else {
     console.log("=== do not do the type coersion.");
 }
+*/
+
+//---------------------Functions--------------------
+
+/*
+//STNTAX: function <function name> (<function argument>){ <function body> }
+
+function calAge (year){
+    return 2019 - year;
+}
+
+var venkatAge = calAge(1999);
+var shubhamAge = calAge(2000);
+var vardhanAge = calAge(1947);
+console.log(venkatAge, shubhamAge, vardhanAge);
+
+
+function retirement (firstName, age){
+    var timeLeft =  65 - age;
+    if(timeLeft > 0){
+        console.log(firstName + ' will retire in ' + timeLeft + ' years.');
+    } else {
+        console.log(firstName + ' is a retired guy!');
+    }
+}
+
+retirement('Venkat', venkatAge);
+retirement('Shubham', shubhamAge);
+retirement('Vardhan', vardhanAge);
+*/
+
+//--------Function Expression and Statement---------
+
+/*
+//Function Declaration:
+// function whatDoYouDo(job, firstName){ }
+
+//Function Expression
+// Def: Anything that we do which results in a value , the whole is treated as an expression.
+
+var whatDoYouDo = function(job, firstName){
+    switch(job){
+        case 'programmer':
+            return firstName + ' is a fucking coder!';
+        case 'rider':
+            return firstName + ' is a bullet rider';
+        case 'cop':
+            return firstName + ' is a fucking cop!';
+        default:
+            return firstName + ' is in some professional not included!'
+    }
+}
+
+console.log(whatDoYouDo('programmer', 'Venkat'));
+console.log(whatDoYouDo('rider', 'Duniya'));
+console.log(whatDoYouDo('cop', 'Shubham'));
+console.log(whatDoYouDo('fishing', 'Siddu'));
+console.log(whatDoYouDo('rider', 'Vardhan'));
+
+
+//Statements:
+//Def: Statements do some actions which executes but do not produce sudden results. example: IF/Else Statement, Looping statements, function declarations, etc
+*/
+
+//----------------------Arrays----------------------
+
+/*
+//INITIALIZATION OF AN ARRAYS:
+
+var names = ['Venkat', 'Shubham', 'Vardhan', 'Siddu'];
+var year = new Array(1999, 1998, 2000, 2001);
+
+console.log(names);     //printing the entire array
+console.log(names.length); //find the number of elements present in the Array
+console.log(names[2]);  //printing the selected element in the array.
+
+//MUTATING AN ARRAY:
+
+names[3] = 'Duniya';    //Mutates an element at the selected Position of the Array.
+names[names.length] = 'Aditi';  //Adds an element at the end of the Array.
+console.log(names);
+
+//SOME FUNCTIONS OF ARRAYS:
+
+var venkat = ['Venkat', 'Raja', 1999, "Programmer", false];
+
+
+venkat.push('Blue');   //PUSH method adds an element at the end of an Array.
+venkat.unshift('Mr.'); //UNSHIFT method adds an element from the begining of an array.
+console.log(venkat);
+
+venkat.pop();   //POP method deletes an element from the end of an array.
+venkat.shift();   //SHIFT method deletes an element from the begining of an array.
+console.log(venkat);
+
+console.log(venkat.indexOf(1999));  //INDEXOF method gives the position of the element in an array. NOTE: if the element whose index number is to be found is not there in that array then it will automatically result to -1.
+
+console.log(venkat.indexOf('Venky'));
+
+//TERNARY OPERATOR can be used in an array to find out whether that element is there in the array or not:
+
+var isCop = venkat.indexOf('Cop') === -1 ? 'Element is not there in the Array' : 'Element Present';
+console.log(isCop);
+
+console.log(names);
+names.pop();
+console.log(names);
+console.log(names.length);
 */
 
