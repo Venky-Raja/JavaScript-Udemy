@@ -92,6 +92,14 @@ console.log (typeof venkatAge);
 var z;
 console.log (typeof x);
 
+// Additional Opertor taught in the Lopping section.
+
+// !== : Strict Different from Operator. It is used to check the differnce between two value, whether they are different from each other or not. 
+
+// != : Different Operator. It is also used to check the difference between two values, whether they are different from each other or not but it is slightly different from the strict different operator, It accepts both string and numeric value looking alike.
+
+example shown in the Looping section.
+
 */
 
 //------------ Operators Precedence ----------------
@@ -390,5 +398,120 @@ console.log(names);
 names.pop();
 console.log(names);
 console.log(names.length);
+*/
+
+//---------------Object and Properties--------------
+
+/*
+//OBJECT LITERAL METHOD:
+//syntax: var <object name> = { <object body> }
+
+var venkat = {
+    firstName: 'Venkat Raja',
+    lastName: 'CH',
+    birthYear: 1999,
+    friends: ['Shubham', 'Siddhant', 'Vardhan', 'Duniya', 'Gadhi'],
+    isMarried: false,
+    job: 'Programmer'
+}
+
+console.log(venkat);
+
+//Accessing Properties
+
+console.log(venkat.firstName);
+console.log(venkat['lastName']);
+var z = 'birthYear';
+console.log(venkat[z]);
+var x = venkat['birthYear'];
+console.log(x);
+
+//Mutating Properties:
+
+venkat.lastName = 'Chitreddy';
+venkat['job'] = 'Senior Web Developer';
+console.log(venkat);
+
+//NEW OBJECT METHOD:
+
+var venky = new Object();
+venky.firstName = 'Venkat';
+venky.lastName = 'Raja';
+venky.job = 'Pilot';
+venky.birthYear = 2000;
+console.log(venky);
+*/
+
+//----------------Object and Methods----------------
+
+/*
+//this keyword is introduced.
+//this is used as the keyword which selects the current object or the property.
+
+var venkat = {
+    firstName: 'Venkat Raja',
+    lastName: 'CH',
+    birthYear: 1999,
+    friends: ['Shubham', 'Siddhant', 'Vardhan', 'Duniya', 'Gadhi'],
+    isMarried: false,
+    job: 'Programmer',
+    calcAge: function (){
+        this.age = 2019 - this.birthYear;
+    }
+}
+
+console.log(venkat); //print before executing the function
+venkat.calcAge(); //execution of the function
+console.log(venkat);    //print after the execution of the function #age is added.
+
+*/
+
+//---------------Loops & Iteration------------------
+
+/*
+// For Loop:
+//SYNTAX: for (initialization ; condition; increment/decrement){ <body> }
+
+var venkat = ['Venkat', 'Raja', 1999, 'Programmer', false, 'blue'];
+
+for (var i = 0; i < venkat.length; i++){
+    console.log(venkat[i]);
+}
+
+// i and j are taken for the initialization and it is just a convention in JavaScript.
+
+
+// While Loop:
+//SYNTAX: <initialization>;
+//          while(condition){ <body><increment/decrement> }
+
+var j = 0;
+
+while (j < venkat.length){
+    console.log(venkat[j]);
+    j++;
+}
+
+// CONTINUE and BREAK statement
+
+//Continue: the continue keyword is used when you need to skip a certion condition during the iteration and move on to the next condition.
+
+for(var k = 0; k < venkat.length; k++){
+    if (typeof venkat[k] !== 'string') continue;
+    console.log(venkat[k]);
+}
+//Break: the break keyword is used to break out (quit) of the situation. It will stop the loop and move out of it as soon as break gets executed.
+
+var l = 0;
+
+while(l < venkat.length){
+    if(typeof venkat[l] !== 'string') break;
+    console.log(venkat[l]);
+    l++;
+}
+
+for (var m = 0; m < venkat.length; m++){
+    console.log(typeof venkat[m]);
+}
 */
 
