@@ -1,5 +1,6 @@
 //////////////////////////////////////////
-// Lecture: Hoisting
+
+//CREATION PHASE: STEP: 1 : HOISTING
 
 //Hoisting in Functions: [NOTE: Hoisting can work only in function declarations, it would not work in function expressions.]
 
@@ -43,10 +44,14 @@ function Local(){
 
 console.log(avg);
 
-
+//biggest advantage of hoisting is in using the function declaration even before defining the entire function.
 
 
 ///////////////////////////////////////
+
+//CREATION PHASE: STEP: 2 : CREATION OF SCOPING CHAIN
+
+
 // Lecture: Scoping
 
 
@@ -96,11 +101,39 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+console.log(this);
+
+calcAge(1999);
+
+function calcAge (year){
+    console.log(2019 - year);
+    console.log(this);
+}
 
 
+var venkat = {
+    name: 'Venkat Raja',
+    birthYear: 1999,
+    age : function(){
+    console.log(2019 - this.birthYear);
+    console.log(this);
+        
+    function abc(){
+        console.log(this);
+    }
+        abc();
+    }
+}
 
+venkat.age();
 
+var shubham = {
+    name: 'Shubham',
+    birthYear: 2000
+}
 
+shubham.age = venkat.age;   //Method borrowing, the elements of the object venkat is borrowed and used by the object shubham.
+shubham.age();
 
 
 
