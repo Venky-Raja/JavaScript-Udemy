@@ -8,3 +8,88 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+
+var score, roundScore, activePlayer;
+
+score = [0,0];
+roundScore = 0;
+activePlayer = 0;
+
+//document.querySelector('#current-' + activePlayer).textContent = dice;      //textcontent does only for strings.    //Gover value
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';       //innerHTML is used to embedd addition Html code in the dice variable
+
+//var x = document.querySelector('#score-0').textContent;   //To see the selected part //Getter value
+//console.log(x);
+
+document.querySelector('.dice').style.display = 'none';
+
+
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+
+document.querySelector('.btn-roll').addEventListener('click', function(){       //Anonymous Function has been declared in this line.
+    
+    //get a number in dice after a roll:
+    dice = Math.floor(Math.random() * 6) + 1;
+    
+    //make the dice visible:
+    var diceNum = document.querySelector('.dice');  //Storing in a variable to shorten the program.
+    diceNum.style.display = 'block';
+    diceNum.src = 'dice-' + dice + '.png';
+    
+    //Sum up the current value to the current value:
+   if (dice !== 1){
+       //Add the scores
+       roundScore += dice;
+       document.querySelector('#current-' + activePlayer).textContent = roundScore;
+       
+   } else {
+       //change the player and stuffs
+       activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+       roundScore = 0;
+       
+       document.getElementById('current-0').textContent = '0';
+       document.getElementById('current-1').textContent = '0';
+       
+       document.querySelector('.player-0-panel').classList.toggle('active');
+       document.querySelector('.player-1-panel').classList.toggle('active');
+       
+       //document.querySelector('.player-0-pannel').classList.remove('active');
+       //document.querySelector('.player-1-pannel').classList.add('active');
+
+       
+       document.querySelector('.dice').style.display = 'none';
+
+
+   }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
