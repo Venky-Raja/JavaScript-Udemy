@@ -9,3 +9,7 @@ Date : 2nd Oct 2019 : I have used my first git commands and did practically in m
 Date : 8th Oct 2019 : Yeah I haven't updated the readme section I don't know why I keep forgeting to update this part. Well, I should get a reminder for this task. Anyways, till time the topics been covered in the course were Data Types and Variables, Data mutation and Type Coersion, Operators, Operator's Precendence, IF/Else Statement and the Boolean Logical Operators part.
 
 I have also completed the coding challenge 1 and successfully passed it with few minor errors and lessons.
+
+
+
+this is to test whether i am using ri8 git hub account or not

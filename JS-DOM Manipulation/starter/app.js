@@ -61,8 +61,6 @@ document.querySelector('.btn-roll').addEventListener('click', function(){       
 
        
        document.querySelector('.dice').style.display = 'none';
-
-
    }
 });
 
