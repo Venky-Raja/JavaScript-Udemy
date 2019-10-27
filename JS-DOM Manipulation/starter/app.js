@@ -9,28 +9,12 @@ GAME RULES:
 
 */
 
-var score, roundScore, activePlayer;
+var score, roundScore, activePlayer, gamePlaying = true;
 
-score = [0,0];
-roundScore = 0;
-activePlayer = 0;
-
-//document.querySelector('#current-' + activePlayer).textContent = dice;      //textcontent does only for strings.    //Gover value
-//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';       //innerHTML is used to embedd addition Html code in the dice variable
-
-//var x = document.querySelector('#score-0').textContent;   //To see the selected part //Getter value
-//console.log(x);
-
-document.querySelector('.dice').style.display = 'none';
-
-
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 document.querySelector('.btn-roll').addEventListener('click', function(){       //Anonymous Function has been declared in this line.
-    
+    if(gamePlaying){
     //get a number in dice after a roll:
     dice = Math.floor(Math.random() * 6) + 1;
     
@@ -47,7 +31,66 @@ document.querySelector('.btn-roll').addEventListener('click', function(){       
        
    } else {
        //change the player and stuffs
-       activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+      nextPlayer();
+    }        
+    }
+});
+
+document.querySelector('.btn-hold').addEventListener('click', function(){
+    if(gamePlaying){
+     //Store into the global score and the update
+    score[activePlayer] += roundScore;
+    
+    //Update the user Interface
+    document.querySelector('#score-' + activePlayer).textContent = score[activePlayer];
+    
+    //check whether the player has won the game or not
+    if (score[activePlayer] >= 100){
+        document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+        gamePlaying = false;
+    }else{
+        nextPlayer();
+    }       
+    }
+
+});
+
+document.querySelector('.btn-new').addEventListener('click', init);
+
+function init (){
+    score = [0,0];
+    roundScore = 0;
+    activePlayer = 0;
+
+    //document.querySelector('#current-' + activePlayer).textContent = dice;      //textcontent does only for strings.    //Gover value
+    //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';       //innerHTML is used to embedd addition Html code in the dice variable
+
+    //var x = document.querySelector('#score-0').textContent;   //To see the selected part //Getter value
+    //console.log(x);
+
+    document.querySelector('.dice').style.display = 'none';
+
+
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');            
+    document.querySelector('.player-1-panel').classList.remove('active');
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-0-panel').classList.add('active');
+    gamePlaying = true;
+    }
+
+
+function nextPlayer () {
+     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
        roundScore = 0;
        
        document.getElementById('current-0').textContent = '0';
@@ -61,33 +104,4 @@ document.querySelector('.btn-roll').addEventListener('click', function(){       
 
        
        document.querySelector('.dice').style.display = 'none';
-   }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
